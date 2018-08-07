@@ -29,7 +29,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts":  []
           },
           "configurations": {
             "production": {
@@ -119,6 +119,130 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "gerenciamento-clientes": {
+      "root": "projects/gerenciamento-clientes/",
+      "sourceRoot": "projects/gerenciamento-clientes/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/gerenciamento-clientes",
+            "index": "projects/gerenciamento-clientes/src/index.html",
+            "main": "projects/gerenciamento-clientes/src/main.ts",
+            "polyfills": "projects/gerenciamento-clientes/src/polyfills.ts",
+            "tsConfig": "projects/gerenciamento-clientes/tsconfig.app.json",
+            "assets": [
+              "projects/gerenciamento-clientes/src/favicon.ico",
+              "projects/gerenciamento-clientes/src/assets"
+            ],
+            "styles": [
+              "projects/gerenciamento-clientes/src/styles.scss"
+            ],
+            "scripts": [  "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/gerenciamento-clientes/src/environments/environment.ts",
+                  "with": "projects/gerenciamento-clientes/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "gerenciamento-clientes:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "gerenciamento-clientes:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "gerenciamento-clientes:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gerenciamento-clientes/src/test.ts",
+            "polyfills": "projects/gerenciamento-clientes/src/polyfills.ts",
+            "tsConfig": "projects/gerenciamento-clientes/tsconfig.spec.json",
+            "karmaConfig": "projects/gerenciamento-clientes/karma.conf.js",
+            "styles": [
+              "projects/gerenciamento-clientes/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/gerenciamento-clientes/src/favicon.ico",
+              "projects/gerenciamento-clientes/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gerenciamento-clientes/tsconfig.app.json",
+              "projects/gerenciamento-clientes/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "gerenciamento-clientes-e2e": {
+      "root": "projects/gerenciamento-clientes-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/gerenciamento-clientes-e2e/protractor.conf.js",
+            "devServerTarget": "gerenciamento-clientes:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "gerenciamento-clientes:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/gerenciamento-clientes-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]

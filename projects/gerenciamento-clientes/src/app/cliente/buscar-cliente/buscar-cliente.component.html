@@ -1,0 +1,54 @@
+
+<h1><i class="fa fa-users" aria-hidden="true"></i>  Busca de Cliente</h1>
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="ipNome">Nome</label>
+      <input type="text" class="form-control" id="ipNome" name="ipNome" placeholder="Digite o nome do cliente">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="ipEmail">Email</label>
+      <input type="email" class="form-control" id="ipEmail" name="ipEmail" placeholder="Digite o email do cliente">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="ipCEP">CEP</label>
+        <input type="text" class="form-control" id="ipCEP" name="ipCEP" placeholder="Digite o CEP do cliente">
+      </div>
+  </div>
+  <div class="form-row ">
+   <button type="submit" class="btn btn-primary col-md-2"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
+  </div>
+</form>
+<table class="table table-hover" id="tbClientes">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">CEP</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
