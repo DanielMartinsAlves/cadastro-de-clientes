@@ -6,11 +6,13 @@ import { BuscarClienteComponent } from './buscar-cliente/buscar-cliente.componen
 import { FichaClienteComponent } from './ficha-cliente/ficha-cliente.component';
 import { EditarClienteComponent } from './editar-cliente/editar-cliente.component';
 import { BuscarCepComponent } from './buscar-cep/buscar-cep.component';
+import { PadraoModule } from '../padrao/padrao.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    PadraoModule
   ],
   declarations: [BuscarClienteComponent, FichaClienteComponent, EditarClienteComponent, BuscarCepComponent]
 })
